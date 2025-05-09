@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		@apply font-Poppins text-dark-blue overflow-x-hidden bg-white;
+		padding-top: env(safe-area-inset-top);
+		scroll-behavior: smooth;
+	}
+	.btn {
+		@apply text-lg font-medium capitalize leading-[27px] py-[10px] px-[22px] border-[2.5px] rounded-[14px] border-current relative inline-flex hover:before:translate-x-1 hover:before:-translate-y-1 hover:before:w-full hover:before:h-full duration-300 transition-all max-sm:text-[16px] max-sm:px-4;
+	}
+	.btn::before {
+		@apply rounded-[inherit] w-[calc(100%+4px)] h-[calc(100%+4px)] top-[4px] right-[4px] bg-purple-light content-[''] absolute z-[-1] duration-300 transition-all;
+	}
+	svg {
+		@apply inline-block;
+	}
+	.container {
+		@apply xl:max-w-[1364px];
+	}
+	.banner-section {
+		@apply xl:pt-[338px] xl:pb-[307px] relative max-xl:pb-[200px] max-xl:pt-[300px] max-lg:pt-[132px] max-lg:pb-0;
+	}
+	.banner-section .title {
+		@apply font-semibold text-[46px] leading-[50px] tracking-[-0.97px] sm:text-5xl md:text-6xl xl:text-[80px] xl:leading-[90px] xl:tracking-[-2.86px] max-w-[600px] xl:max-w-[780px];
+	}
+	.h2 {
+		@apply text-3xl md:text-4xl xl:text-[64px] xl:leading-[77px] xl:tracking-[-2.54px] font-semibold;
+	}
+	.h4 {
+		@apply text-2xl md:text-[28px] md:leading-[33px] font-semibold tracking-[-0.02em];
+	}
+	.review-card {
+		@apply py-12 px-10 bg-[#fcfcfc] rounded-[20px] h-full flex flex-col max-sm:px-7 max-sm:py-8;
+	}
+	.slides-per-view-auto .swiper-slide {
+		@apply max-xl:!w-auto;
+	}
+	.roommate-section .review-card {
+		@apply max-xl:w-[320px] max-sm:w-[270px];
+	}
+	.roommate-section .swiper-slide:nth-child(1) .review-card {
+		@apply rotate-[-2deg] translate-y-1;
+	}
+	.roommate-section .swiper-slide:nth-child(3) .review-card {
+		@apply rotate-[5deg] translate-y-2 translate-x-2;
+	}
+	.roommate-section .swiper {
+		@apply overflow-visible;
+	}
+	.roommate-section {
+		@apply pt-[200px] pb-[300px] z-10 relative max-lg:!my-0 max-lg:!translate-y-0 max-lg:pb-[150px] max-lg:pt-[120px];
+	}
+	@media screen and (max-width: 1023px) {
+		.roommate-section {
+			-webkit-mask-size: cover !important;
+		}
+	}
+	.partner-section {
+		@apply pt-[156px] pb-[120px] bg-white relative before:content-[''] before:inset-0 before:top-[-300px] before:bg-white before:absolute max-md:pb-0 max-md:pt-20;
+	}
+	.find-roommate {
+		@apply pt-[84px] pb-16 md:pb-[144px] bg-white relative overflow-hidden;
+	}
+	.find-roommate .swiper-slide {
+		@apply h-auto max-xl:!w-[320px] max-md:!w-auto;
+	}
+	.find-roommate .swiper-slide:nth-child(1) .find-roommate-card {
+		@apply md:rotate-[-2.79deg] rotate-[-2.79deg];
+	}
+	.find-roommate .swiper-slide:nth-child(2) .find-roommate-card {
+		@apply md:rotate-[2.52deg] rotate-[2.52deg];
+	}
+	.find-roommate .swiper-slide:nth-child(3) .find-roommate-card {
+		@apply md:rotate-[-2.13deg] rotate-[-2.13deg];
+	}
+	.find-roommate-card {
+		@apply bg-purple-light rounded-3xl p-7 xl:p-9 xl:px-[38px] h-full flex flex-col max-lg:w-[300px];
+	}
+	.img-shadow-fix {
+		@apply -translate-x-[14px]  w-[calc(100%+10px)] !max-w-[unset];
+	}
+	/* Flatmate */
+
+	.flatmate-section {
+		@apply pt-[422px] pb-[450px] max-xl:pb-[250px] max-md:pt-[200px] max-md:pb-[120px];
+	}
+	@media screen and (max-width: 768px) {
+		.flatmate-section {
+			-webkit-mask-size: cover !important;
+		}
+	}
+
+	.how-it-works .slides-per-view-auto .swiper-slide {
+		@apply max-xl:!w-[320px]  max-sm:!w-[290px];
+	}
+	.how-it-works {
+		@apply overflow-hidden pt-[250px] pb-[250px] bg-white relative max-xl:py-12;
+	}
+	.how-it-works-card {
+		@apply aspect-[400/479] text-lg p-[30px] md:px-10 md:pt-12 rounded-[20px] flex flex-col justify-end max-md:text-sm;
+		box-shadow: 0px 185px 74px rgba(0, 0, 0, 0.01),
+			0px 104px 63px rgba(0, 0, 0, 0.03), 0px 46px 46px rgba(0, 0, 0, 0.04),
+			0px 12px 25px rgba(0, 0, 0, 0.05);
+	}
+	.how-it-works-card .text {
+		@apply min-h-11 m-0;
+	}
+	.how-it-works-card .title {
+		@apply font-bold text-[32px] mb-3 max-md:text-2xl;
+	}
+	.how-it-works .swiper-slide:nth-child(1) .how-it-works-card {
+		@apply rotate-[-0.57deg] sm:rotate-[-5.57deg];
+	}
+	.how-it-works .swiper-slide:nth-child(2) .how-it-works-card {
+		@apply rotate-[0.91deg] sm:rotate-[2.91deg];
+	}
+	.how-it-works .swiper-slide:nth-child(3) .how-it-works-card {
+		@apply rotate-[0.22deg] sm:rotate-[0.62deg];
+	}
+	.how-it-works .swiper-slide:nth-child(4) .how-it-works-card {
+		@apply rotate-[0.22deg] sm:rotate-[0.62deg];
+	}
+	.card-content-shadow {
+		box-shadow: 0px 185px 74px rgba(0, 0, 0, 0.01),
+			0px 104px 63px rgba(0, 0, 0, 0.03), 0px 46px 46px rgba(0, 0, 0, 0.04),
+			0px 12px 25px rgba(0, 0, 0, 0.05);
+	}
+	.our-story-section {
+		@apply bg-white relative;
+	}
+	.our-story-section .story {
+		@apply xl:pt-[166px] md:py-[120px] md:min-h-[450px] pt-[110px] pb-[110px];
+	}
+	.footer-links .item {
+		@apply flex flex-col gap-2;
+	}
+	.footer-links .link {
+		@apply inline-flex font-medium;
+	}
+	.footer-links .subtitle {
+		@apply mb-2 font-medium;
+	}
+	/* animations  */
+	.animated-element {
+		@apply duration-500 transition-all delay-200;
+	}
+	.anime-1 {
+		@apply lg:translate-y-[400px] lg:rotate-[10deg];
+	}
+	.review-card {
+		@apply delay-200 duration-1000 transition-all;
+	}
+	.anime-2 .swiper-slide:nth-child(1) .review-card {
+		@apply md:rotate-[-20deg] translate-y-10 md:translate-x-[160%] translate-x-[60%];
+	}
+	.anime-2 .swiper-slide:nth-child(2) .review-card {
+		@apply md:rotate-[2deg] -translate-y-6 md:translate-x-[90%] translate-x-[30%];
+	}
+	.anime-2 .swiper-slide:nth-child(3) .review-card {
+		@apply rotate-[18deg] translate-y-6 translate-x-4;
+	}
+	.find-roommate-card {
+		@apply transition-all duration-1000 delay-200;
+	}
+	.find-roommate-animation .swiper-slide:nth-child(1) .find-roommate-card {
+		@apply md:rotate-[-4.79deg] translate-x-[60%] md:translate-x-[180%];
+	}
+	.find-roommate-animation .swiper-slide:nth-child(2) .find-roommate-card {
+		@apply md:rotate-[4.52deg] translate-x-[30%] md:translate-x-[90%];
+	}
+	.find-roommate-animation .swiper-slide:nth-child(3) .find-roommate-card {
+		@apply md:rotate-[9.13deg];
+	}
+
+	.how-it-works-card {
+		@apply transition-all duration-1000 delay-200;
+	}
+	.how-it-works-animation .swiper-slide:nth-child(1) .how-it-works-card {
+		@apply rotate-[-0.57deg] sm:rotate-[-8.57deg] md:translate-x-[230%];
+	}
+	.how-it-works-animation .swiper-slide:nth-child(2) .how-it-works-card {
+		@apply rotate-[0.91deg] sm:rotate-[4.91deg] md:translate-x-[130%];
+	}
+	.how-it-works-animation .swiper-slide:nth-child(3) .how-it-works-card {
+		@apply rotate-[0.22deg] sm:rotate-[2.62deg] md:translate-x-[80%];
+	}
+	.how-it-works-animation .swiper-slide:nth-child(4) .how-it-works-card {
+		@apply rotate-[0.22deg] sm:rotate-[2.62deg] md:translate-x-[10%];
+	}
+
+	.step-card {
+		@apply delay-200 duration-1000 transition-all max-xl:w-[320px] max-sm:w-[270px];
+	}
+	.swiper-slide:nth-child(2) .step-card {
+		@apply rotate-[-3.14deg];
+	}
+	.swiper-slide:nth-child(3) .step-card {
+		@apply rotate-[12.39deg];
+	}
+	.swiper-slide:nth-child(4) .step-card {
+		@apply rotate-[-8.29deg];
+	}
+	.anime-2 .swiper-slide:nth-child(1) .step-card {
+		@apply md:rotate-[2deg] translate-y-1 md:translate-x-[180%] translate-x-[60%];
+	}
+	.anime-2 .swiper-slide:nth-child(2) .step-card {
+		@apply md:rotate-[2deg] translate-y-1 md:translate-x-[90%] translate-x-[30%];
+	}
+	.anime-2 .swiper-slide:nth-child(3) .step-card {
+		@apply rotate-[8deg] translate-y-2 translate-x-4;
+	}
+	.anime-2 .swiper-slide:nth-child(4) .step-card {
+		@apply rotate-[2.29deg];
+	}
+
+	.kcl-banner {
+		@apply xl:pt-[198px] xl:pb-[323px] relative max-xl:pb-[300px] max-xl:pt-[180px] max-lg:pb-0 max-lg:pt-[160px];
+	}
+	.kcl-banner .title {
+		@apply font-semibold text-[46px] leading-[50px] tracking-[-0.97px] sm:text-5xl md:text-6xl xl:text-[80px] xl:leading-[90px] xl:tracking-[-2.86px] max-w-[600px] xl:max-w-[780px];
+	}
+}
+@media screen and (max-width: 420px) {
+	.banner-section .title {
+		font-size: 12vw;
+		line-height: 1.2;
+	}
+}
+.active-section {
+	@apply z-[99999];
+}
+.match-with-others-slider .swiper-slide {
+	opacity: 0;
+	transition: all ease 1s;
+}
+.match-with-others-slider .swiper-slide.swiper-slide-prev,
+.match-with-others-slider .swiper-slide.swiper-slide-next,
+.match-with-others-slider .swiper-slide.swiper-slide-active {
+	opacity: 1;
+}
+
+.match-with-others-slider .swiper-slide.swiper-slide-active {
+	z-index: 99;
+}
+.navbar-shadow {
+	box-shadow: 0px 0px 24.1835px rgba(45, 56, 73, 0.1);
+}
+.rent-hero-title {
+	font-size: clamp(86px, 11.6vw, 176px);
+	@apply leading-[0.87] lg:leading-[0.82] font-semibold text-center text-[#151B22] max-sm:text-[86px];
+	letter-spacing: -4.42px;
+}
+.match-enquire-text {
+	font-size: clamp(78px, 11.6vw, 176px);
+	@apply leading-[0.87] lg:leading-[0.82] font-semibold max-sm:text-[86px] max-sm:text-center;
+	letter-spacing: -4.42px;
+}
+@media screen and (max-width: 640px) {
+	.RentMatchAndEnquire-Hero {
+		mask-size: 130% 100% !important;
+		-webkit-mask-size: 130% 100% !important;
+	}
+}
+.match-with-others-slider
+	.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(
+		.swiper-slide-next
+	)
+	.how-it-works-card {
+	opacity: 0 !important;
+}
+/*  */
+.match-with-others-slider-2 {
+	position: relative;
+}
+
+.match-with-others-slider-2 .how-it-works-card {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+}
+.match-with-others-slider-2 .how-it-works-card.active {
+	left: 50%;
+	transform: translateX(-50%);
+	position: relative;
+	z-index: 10;
+}
+.match-with-others-slider-2 .how-it-works-card.prev {
+	transform: translate(-135%, 60px) rotate(-12deg);
+}
+.match-with-others-slider-2 .how-it-works-card.next {
+	transform: translate(135%, 60px) rotate(12deg);
+}
+.match-with-others-slider-2 .how-it-works-card.prev-prev {
+	transform: translate(-270%, 200px) rotate(-18deg);
+}
+.match-with-others-slider-2 .how-it-works-card.next-next {
+	transform: translate(270%, 200px) rotate(18deg);
+}
+.match-with-others-slider-2 .how-it-works-card.far-next {
+	transform: translate(-380%, 290px) rotate(-21deg);
+}
+.match-with-others-slider-2 .how-it-works-card.far-prev {
+	transform: translate(380%, 290px) rotate(21deg);
+}
+@media (max-width: 575px) {
+	.match-with-others-slider-2 .how-it-works-card.prev {
+		transform: translate(-115%, 60px) rotate(-12deg);
+	}
+	.match-with-others-slider-2 .how-it-works-card.next {
+		transform: translate(115%, 60px) rotate(12deg);
+	}
+}
